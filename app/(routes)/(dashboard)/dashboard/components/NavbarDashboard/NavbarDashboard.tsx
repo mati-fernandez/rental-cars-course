@@ -1,7 +1,9 @@
+'use client';
+
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Menu } from 'lucide-react';
 import SidebarRoutes from '../SidebarRoutes/SidebarRoutes';
-import { UserButton } from '@clerk/nextjs';
+import { signIn } from 'next-auth/react';
 
 export function Navbardashboard() {
   return (
@@ -17,7 +19,7 @@ export function Navbardashboard() {
         </Sheet>
       </div>
       <div className="flex items-center justify-end w-full gap-x-2">
-        <UserButton />
+        <button onClick={() => signIn()}>Sign In</button>
       </div>
     </nav>
   );

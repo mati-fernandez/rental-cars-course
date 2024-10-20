@@ -2,13 +2,14 @@ import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import './globals.css';
 import NextTopLoader from 'nextjs-toploader';
-import {
-  ClerkProvider,
-  //   SignInButton,
-  //   SignedIn,
-  //   SignedOut,
-  //   UserButton,
-} from '@clerk/nextjs';
+import Navbar from '@/components/ui/Navbar';
+// import {
+//   ClerkProvider,
+//   //   SignInButton,
+//   //   SignedIn,
+//   //   SignedOut,
+//   //   UserButton,
+// } from '@clerk/nextjs';
 
 const geistSans = localFont({
   src: './fonts/GeistVF.woff',
@@ -32,15 +33,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider>
-      <html lang="en">
-        <body
-          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-        >
-          <NextTopLoader color="#000" />
-          {children}
-        </body>
-      </html>
-    </ClerkProvider>
+    // <ClerkProvider>
+    <html lang="en">
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
+        <NextTopLoader color="#000" />
+        <Navbar />
+        {children}
+      </body>
+    </html>
+    // </ClerkProvider>
   );
 }
