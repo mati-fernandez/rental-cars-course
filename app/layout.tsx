@@ -3,13 +3,7 @@ import localFont from 'next/font/local';
 import './globals.css';
 import NextTopLoader from 'nextjs-toploader';
 import Navbar from '@/components/ui/Navbar';
-// import {
-//   ClerkProvider,
-//   //   SignInButton,
-//   //   SignedIn,
-//   //   SignedOut,
-//   //   UserButton,
-// } from '@clerk/nextjs';
+import { Providers } from './Providers';
 
 const geistSans = localFont({
   src: './fonts/GeistVF.woff',
@@ -39,8 +33,10 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <NextTopLoader color="#000" />
-        <Navbar />
-        {children}
+        <Providers>
+          <Navbar />
+          {children}
+        </Providers>
       </body>
     </html>
     // </ClerkProvider>

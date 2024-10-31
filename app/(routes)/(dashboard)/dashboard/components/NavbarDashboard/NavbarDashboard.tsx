@@ -3,9 +3,12 @@
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Menu } from 'lucide-react';
 import SidebarRoutes from '../SidebarRoutes/SidebarRoutes';
-import { signIn } from 'next-auth/react';
+import { signIn, useSession } from 'next-auth/react';
 
 export function Navbardashboard() {
+  const { data: session } = useSession();
+  console.log(session);
+
   return (
     <nav className="flex items-center justify-between w-full h-20 px-2 border-b gap-x-4 md:px-6 bg-background ">
       <div className="block xl:hidden">
