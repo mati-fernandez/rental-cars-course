@@ -90,8 +90,8 @@ model User {
     image         String?
     accounts      Account[]
     sessions      Session[]
-    chats         Chat[]
-    messages      Message[]
+    // chats         Chat[]
+    // messages      Message[]
 }
 
 model VerificationToken {
