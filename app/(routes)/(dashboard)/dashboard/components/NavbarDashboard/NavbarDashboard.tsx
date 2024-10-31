@@ -7,7 +7,7 @@ import { signIn } from 'next-auth/react';
 
 export function Navbardashboard() {
   return (
-    <nav className="flex items-center justify-between w-full h-20 px-2 border-b gap-x-4 md:px-6 bg-background">
+    <nav className="flex items-center justify-between w-full h-20 px-2 border-b gap-x-4 md:px-6 bg-background ">
       <div className="block xl:hidden">
         <Sheet>
           <SheetTrigger className="flex items-center">
@@ -19,7 +19,12 @@ export function Navbardashboard() {
         </Sheet>
       </div>
       <div className="flex items-center justify-end w-full gap-x-2">
-        <button onClick={() => signIn()}>Sign In</button>
+        <button
+          onClick={() => signIn('google')}
+          className="bg-sky-400 px-3 py-2 rounded"
+        >
+          Sign In
+        </button>
       </div>
     </nav>
   );
